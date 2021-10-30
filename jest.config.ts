@@ -5,7 +5,7 @@ module.exports = {
   testEnvironment: 'node',
   transform: {
     '.+\\.ts$': 'ts-jest'
-  },
+  }
   // collectCoverage: true,
   // coverageProvider: 'v8'
 }
