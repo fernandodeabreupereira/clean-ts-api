@@ -9,7 +9,8 @@
     "test:unit": "npm test -- --watch -c jest-unit-config.js",
     "test:integration": "npm test -- --watch -c jest-integration-config.js",
     "test:staged": "npm test -- --findRelatedTests",
-    "test:ci": "npm test -- --coverage"
+    "test:ci": "npm test -- --coverage",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -29,7 +30,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "git-commit-msg-linter": "^2.3.11",
-    "husky": "^4.0.6",
+    "husky": "^7.0.4",
     "jest": "^24.9.0",
     "lint-staged": "^9.5.0",
     "ts-jest": "^24.3.0",
