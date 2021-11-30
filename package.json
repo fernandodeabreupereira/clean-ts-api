@@ -1,7 +1,7 @@
 {
   "name": "clean-node-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "NodeJs Rest API and GraphQL using TDD, Clean Architecture, Typescript and Design Patterns",
   "main": "index.js",
   "scripts": {
     "start": "sucrase-node src/main/server.ts",
@@ -14,7 +14,7 @@
     "prepare": "husky install"
   },
   "keywords": [],
-  "author": "",
+  "author": "Fernando de Abreu Pereira",
   "license": "ISC",
   "devDependencies": {
     "@shelf/jest-mongodb": "^1.1.3",
