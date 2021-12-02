@@ -20,7 +20,7 @@ export class SignUpController implements Controller {
         return badRequest(error)
       }
 
-      const { email } = httpRequest.body
+      const { name, email, password } = httpRequest.body
 
       const isValid = this.emailValidator.isValid(email)
       if (!isValid) {
@@ -28,9 +28,9 @@ export class SignUpController implements Controller {
       }
 
       const account = await this.addAccount.add({
-        name: httpRequest.body.name,
-        email: httpRequest.body.email,
-        password: httpRequest.body.password
+        name,
+        email,
+        password
       })
 
       return ok(account)
