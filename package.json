@@ -4,7 +4,9 @@
   "description": "NodeJs Rest API and GraphQL using TDD, Clean Architecture, Typescript and Design Patterns",
   "main": "index.js",
   "scripts": {
-    "start": "sucrase-node src/main/server.ts",
+    "start": "node dist/main/server.js",
+    "build": "rimraf dist && tsc",
+    "dev": "sucrase-node src/main/server.ts",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --passWithNoTests --runInBand",
     "test:unit": "npm test -- --watch -c jest-unit-config.js",
@@ -37,6 +39,7 @@
     "husky": "^7.0.4",
     "jest": "^24.9.0",
     "lint-staged": "^12.1.2",
+    "rimraf": "^3.0.2",
     "sucrase": "^3.12.1",
     "supertest": "^4.0.2",
     "ts-jest": "^24.3.0",
@@ -45,7 +48,6 @@
   "dependencies": {
     "bcrypt": "^3.0.7",
     "express": "^4.17.1",
-    "fast-glob": "^3.1.1",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.5.1",
     "validator": "^12.1.0"
