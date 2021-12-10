@@ -1,8 +1,8 @@
+import { hash } from 'bcrypt'
 import { Collection } from 'mongodb'
 import request from 'supertest'
 import { MongoHelper } from '../../infra/db/mongodb/helpers/mongodb-helper'
 import app from '../config/app'
-import { hash } from 'bcrypt'
 
 let accountCollection: Collection
 
@@ -31,6 +31,16 @@ describe('Login Routes', () => {
           passwordConfirmation: '123'
         })
         .expect(200)
+
+      await request(app)
+        .post('/api/signup')
+        .send({
+          name: 'Rodrigo',
+          email: 'rodrigo.manguinho@gmail.com',
+          password: '123',
+          passwordConfirmation: '123'
+        })
+        .expect(403)
     })
   })
 
