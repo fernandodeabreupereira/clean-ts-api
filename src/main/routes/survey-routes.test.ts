@@ -1,5 +1,5 @@
 import { sign } from 'jsonwebtoken'
-import { Collection } from 'mongodb'
+import { Collection, ObjectId } from 'mongodb'
 import request from 'supertest'
 import { MongoHelper } from '../../infra/db/mongodb/helpers/mongodb-helper'
 import app from '../config/app'
@@ -49,9 +49,11 @@ describe('Survey Routes', () => {
         password: '123',
         role: 'admin'
       })
-      const id = res.ops[0]._id
+      const id = res.insertedId.toHexString()
       const accessToken = sign({ id }, env.jwtSecret)
-      await accountCollection.updateOne({ _id: id }, {
+      await accountCollection.updateOne({
+        _id: new ObjectId(id)
+      }, {
         $set: {
           accessToken
         }
