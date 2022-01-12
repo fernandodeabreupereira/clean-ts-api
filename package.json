@@ -20,7 +20,7 @@
     "test:staged": "npm test -- --findRelatedTests",
     "test:ci": "npm test -- --coverage",
     "test:coveralls": "npm run test:ci && coveralls < coverage/lcov.info",
-    "prepare": ""
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@shelf/jest-mongodb": "^2.0.3",
